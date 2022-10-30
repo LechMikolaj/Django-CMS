@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Django First Application</title>
+</head>
+<body style="background-color:grey;">
+<h1>Django First Application with CMS</h1>
+
+{% if posts_list %}
+    <ul>
+
+        <table style="border:2px solid black" >
+
+            <tr>
+
+                <th style="border:2px solid black">Title</th>
+                <th style="border:2px solid black">Post Body</th>
+                <th style="border:2px solid black">Date</th>
+
+            </tr>
+        {% for post in posts_list %}
+
+
+            <tr>
+
+                <td style="border:2px solid black">{{ post.title }}</td>
+                <td style="border:2px solid black">{{ post.body }}</td>
+                <td style="border:2px solid black">{{ post.pub_date }}</td>
+
+
+            </tr>
+
+
+        {% endfor %}
+            </table>
+
+    </ul>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
+
+</body>
+</html>
